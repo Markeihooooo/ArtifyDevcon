@@ -1,0 +1,26 @@
+{
+  "canisters": {
+    "Artify_backend": {
+      "main": "src/Artify_backend/main.mo",
+      "type": "motoko"
+    },
+    "Artify_frontend": {
+      "dependencies": [
+        "Artify_backend"
+      ],
+      "source": [
+        "src/Artify_frontend/dist"
+      ],
+      "type": "assets",
+      "workspace": "Artify_frontend"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "output_env_file": ".env",
+  "version": 1
+}
