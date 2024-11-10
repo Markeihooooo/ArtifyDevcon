@@ -1,30 +1,20 @@
-import { useState } from 'react';
-import { Artify_backend } from 'declarations/Artify_backend';
+import { Link, Route, Routes } from 'react-router-dom';
+import Home from './Component/main';
+import Artists from './Component/Artist';
+import Login from './Component/Login/login';
+import Profile from './Component/Profile';
 
 function App() {
-  const [greeting, setGreeting] = useState('');
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    const name = event.target.elements.name.value;
-    Artify_backend.greet(name).then((greeting) => {
-      setGreeting(greeting);
-    });
-    return false;
-  }
-
   return (
-    <main>
-      <img src="/logo2.svg" alt="DFINITY logo" />
-      <br />
-      <br />
-      <form action="#" onSubmit={handleSubmit}>
-        <label htmlFor="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
-      </form>
-      <section id="greeting">{greeting}</section>
-    </main>
+    
+     
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/artist" element={<Artists />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path='/login' element={<Login />}/>
+      </Routes>
+    
   );
 }
 

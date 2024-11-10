@@ -1,8 +1,11 @@
 {
   "canisters": {
     "Artify_backend": {
-      "main": "src/Artify_backend/main.mo",
-      "type": "motoko"
+      "type": "motoko",
+      "source": [
+        "src/Artify_backend"
+      ],
+      "main": "src/Artify_backend/main.mo"
     },
     "Artify_frontend": {
       "dependencies": [
